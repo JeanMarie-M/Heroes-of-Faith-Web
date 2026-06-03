@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Programs - RGC Heroes {% endblock %}
+
+{% block content %}
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1 class="heading-title">Our Programs</h1>
+              <p class="mb-0">
+                Through our partnership with Compassion International, children and youth
+                receive support that nurtures their spiritual, educational, social,
+                emotional, and physical development, empowering them to build brighter
+                futures and become positive change-makers in their communities.
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="{% url 'home'%}">Home</a></li>
+            <li class="current">Programs</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Page Title -->
+
+
+    <!-- Programs Section -->
+    <section id="services" class="services section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+
+            <div class="row g-4">
+
+              {% for program in our_programs %}
+              <div class="col-md-4" data-aos="fade-right" data-aos-delay="150">
+                <div class="service-card highlighted">
+                  <div class="card-header">
+                    <div class="icon-circle">
+                      <i class="fa-solid fa-certificate fa-spin fa-spin-reverse" style="color: rgb(116, 252, 141);"></i>
+                    </div>
+                    <span class="service-num">{{ program.id }}</span>
+                  </div>
+                  <div class="card-body">
+                    <h4><a href="#">{{ program.title }}</a></h4>
+                    <p>{{ program.description}}</p>
+                    <ul class="feature-list">
+                      <li><i class="bi bi-check2"></i>{{ program.goal_one }}</li>
+                      <li><i class="bi bi-check2"></i>{{ program.goal_two }}</li>
+                    </ul>
+                  </div>
+                  <a href="#" class="card-link">
+                    <span>Learn More</span>
+                    <i class="bi bi-chevron-right"></i>
+                  </a>
+                </div>
+
+              </div><!-- End Service Card -->
+              {% endfor %}
+
+            </div>
+          </div>
+
+      <section id="stories" class="team section">
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row g-4 justify-content-center">
+
+          <!-- Call To Action -->
+    <div class="join-team-banner" data-aos="fade-up" data-aos-delay="250">
+      <div class="banner-bg-pattern"></div>
+
+      <div class="banner-content">
+
+        <div class="banner-text">
+          <span class="badge-label">
+            <i class="bi bi-heart-fill"></i> More Programs Ahead
+          </span>
+
+          <h3>Help Rewrite Another Child’s Story</h3>
+
+          <p>
+           Together, we can continue creating stories of hope, transformation, and empowerment.
+          </p>
+        </div>
+
+        <div class="banner-actions">
+          <a href="{% url 'contact' %}" class="btn-primary-action">
+            <span>Partner With Us</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+
+          <a href="{% url 'about' %}" class="btn-secondary-action">
+            <i class="bi bi-info-circle"></i>
+            <span>Learn More</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+      </div>
+    </div>
+      </section>
+
+    </section><!-- /Services Section -->
+
+
+
+  </main>
+
+{% endblock %}

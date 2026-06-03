@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Home - RGC Heroes {% endblock %}
+
+{% block content %}
+<main>
+    <section id="hero" class="hero section light-background">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-12" data-aos="fade-down">
+
+            <div class="hero-header">
+              <h1>Changing <span class="highlight">One Child’s</span> Story at a Time</h1>
+            </div>
+
+          </div><!-- End Header Column -->
+
+        </div>
+
+        <div class="row g-4 mt-4">
+
+          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="media-block">
+              <img src="{% static 'assets/img/about/about-wide-3.webp' %}" alt="Creative Digital Solutions" class="img-fluid">
+              <div class="overlay-content">
+                <div class="stats-item">
+                  <span class="number">500+</span>
+                  <span class="label">Lives Being Transformed</span>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- End Media Column -->
+
+          <div class="col-lg-5" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="info-block">
+              <p class="lead-text">Every child carries dreams, potential, and purpose. Through compassion, mentorship, education, and Christ-centered care, children are empowered to rise above challenges and build brighter futures filled with hope and opportunity.</p>
+              <ul class="feature-list">
+                <li><i class="bi bi-check-circle-fill"></i> Holistic Child Development</li>
+                <li><i class="bi bi-check-circle-fill"></i> Education & Academic Support</li>
+                <li><i class="bi bi-check-circle-fill"></i> Youth Empowerment & Leadership</li>
+              </ul>
+
+              <div class="action-row">
+                <a href="{% url 'gallery'%}" class="btn-get-started">View Our Gallery</a>
+                <a href="{% url 'stories'%}" class="btn-contact">
+                  <i class="bi bi-telephone"></i>
+                  <span>Explore Our Stories</span>
+                </a>
+              </div>
+            </div>
+
+          </div><!-- End Info Column -->
+
+        </div>
+
+      </div>
+    </div>
+
+
+    </section><!-- /Hero Section -->
+</main>
+{% endblock %}
