@@ -15,7 +15,7 @@ class Programs(models.Model):
 class Stories(models.Model):
     category = models.CharField(max_length=100)
     description = models.TextField()
-    profile = models.ImageField(max_length=100)
+    profile = models.ImageField(upload_to="stories/")
     title = models.CharField(max_length=100)
 
     def __str__(self):
@@ -23,7 +23,7 @@ class Stories(models.Model):
 
 class Gallery(models.Model):
     category = models.CharField(max_length=100)
-    image = models.ImageField(max_length=100)
+    image = models.ImageField(upload_to="gallery/")
     title = models.CharField(max_length=100)
 
     def __str__(self):
