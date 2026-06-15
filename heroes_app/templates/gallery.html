@@ -54,131 +54,25 @@
 
       <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
+        {% for photo in our_photos %}
         <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-web">
           <div class="portfolio-card">
-            <div class="portfolio-image">
-              <img src="{% static 'assets/img/portfolio/portfolio-3.webp' %}" class="img-fluid" alt="Children during a classroom mentorship session" loading="lazy">
+            <div class="portfolio-image" style="border-radius:20px">
+              <img src="{{ photo.image.url }}" class="img-fluid" alt="{{ photo.title }}" loading="lazy">
               <div class="portfolio-overlay">
                 <div class="overlay-actions">
-                  <a href="{% static 'assets/img/portfolio/portfolio-3.webp' %}" title="Education Support" data-gallery="portfolio-gallery-web" class="glightbox action-btn"><i class="bi bi-arrows-fullscreen"></i></a>
+                  <a href="{{ photo.image.url }}" title="{{ photo.title }}" data-gallery="portfolio-gallery-web" class="glightbox action-btn"><i class="bi bi-arrows-fullscreen"></i></a>
                   <a href="#" title="View Story" class="action-btn"><i class="bi bi-arrow-right"></i></a>
                 </div>
               </div>
             </div>
             <div class="portfolio-content">
-              <span class="portfolio-category">Education</span>
-              <h4 class="portfolio-title">Empowering Through Learning</h4>
+              <span class="portfolio-category">{{ photo.category }}</span>
+              <h4 class="portfolio-title">{{ photo.title }}</h4>
             </div>
           </div>
         </div><!-- End Portfolio Item -->
-
-        <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-branding">
-          <div class="portfolio-card">
-            <div class="portfolio-image">
-              <img src="{% static 'assets/img/portfolio/portfolio-7.webp' %}" class="img-fluid" alt="Youth mentorship and encouragement" loading="lazy">
-              <div class="portfolio-overlay">
-                <div class="overlay-actions">
-                  <a href="{% static 'assets/img/portfolio/portfolio-7.webp' %}" title="Mentorship Journey" data-gallery="portfolio-gallery-branding" class="glightbox action-btn"><i class="bi bi-arrows-fullscreen"></i></a>
-                  <a href="#" title="View Story" class="action-btn"><i class="bi bi-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-content">
-              <span class="portfolio-category">Mentorship</span>
-              <h4 class="portfolio-title">Walking Together in Hope</h4>
-            </div>
-          </div>
-        </div><!-- End Portfolio Item -->
-
-        <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-print">
-          <div class="portfolio-card">
-            <div class="portfolio-image">
-              <img src="{% static 'assets/img/portfolio/portfolio-5.webp' %}" class="img-fluid" alt="Community outreach and support activities" loading="lazy">
-              <div class="portfolio-overlay">
-                <div class="overlay-actions">
-                  <a href="{% static 'assets/img/portfolio/portfolio-5.webp' %}" title="Community Outreach" data-gallery="portfolio-gallery-print" class="glightbox action-btn"><i class="bi bi-arrows-fullscreen"></i></a>
-                  <a href="#" title="View Story" class="action-btn"><i class="bi bi-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-content">
-              <span class="portfolio-category">Community</span>
-              <h4 class="portfolio-title">Serving Families with Compassion</h4>
-            </div>
-          </div>
-        </div><!-- End Portfolio Item -->
-
-        <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-web">
-          <div class="portfolio-card">
-            <div class="portfolio-image">
-              <img src="{% static 'assets/img/portfolio/portfolio-1.webp' %}" class="img-fluid" alt="Children participating in learning activities" loading="lazy">
-              <div class="portfolio-overlay">
-                <div class="overlay-actions">
-                  <a href="{% static 'assets/img/portfolio/portfolio-1.webp' %}" title="Learning Activities" data-gallery="portfolio-gallery-web" class="glightbox action-btn"><i class="bi bi-arrows-fullscreen"></i></a>
-                  <a href="#" title="View Story" class="action-btn"><i class="bi bi-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-content">
-              <span class="portfolio-category">Education</span>
-              <h4 class="portfolio-title">Building Brighter Futures</h4>
-            </div>
-          </div>
-        </div><!-- End Portfolio Item -->
-
-        <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-branding">
-          <div class="portfolio-card">
-            <div class="portfolio-image">
-              <img src="{% static 'assets/img/portfolio/portfolio-9.webp' %}" class="img-fluid" alt="Mentorship and spiritual growth sessions" loading="lazy">
-              <div class="portfolio-overlay">
-                <div class="overlay-actions">
-                  <a href="{% static 'assets/img/portfolio/portfolio-9.webp' %}" title="Spiritual Growth" data-gallery="portfolio-gallery-branding" class="glightbox action-btn"><i class="bi bi-arrows-fullscreen"></i></a>
-                  <a href="#" title="View Story" class="action-btn"><i class="bi bi-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-content">
-              <span class="portfolio-category">Mentorship</span>
-              <h4 class="portfolio-title">Growing in Faith and Purpose</h4>
-            </div>
-          </div>
-        </div><!-- End Portfolio Item -->
-
-        <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-campaign">
-          <div class="portfolio-card">
-            <div class="portfolio-image">
-              <img src="{% static 'assets/img/portfolio/portfolio-2.webp' %}" class="img-fluid" alt="Youth camp and empowerment sessions" loading="lazy">
-              <div class="portfolio-overlay">
-                <div class="overlay-actions">
-                  <a href="{% static 'assets/img/portfolio/portfolio-2.webp' %}" title="Youth Camps" data-gallery="portfolio-gallery-campaign" class="glightbox action-btn"><i class="bi bi-arrows-fullscreen"></i></a>
-                  <a href="#" title="View Story" class="action-btn"><i class="bi bi-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-content">
-              <span class="portfolio-category">Leadership</span>
-              <h4 class="portfolio-title">Confidence Through Leadership</h4>
-            </div>
-          </div>
-        </div><!-- End Portfolio Item -->
-
-        <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-print">
-          <div class="portfolio-card">
-            <div class="portfolio-image">
-              <img src="{% static 'assets/img/portfolio/portfolio-6.webp' %}" class="img-fluid" alt="Graduation and celebration moments" loading="lazy">
-              <div class="portfolio-overlay">
-                <div class="overlay-actions">
-                  <a href="{% static 'assets/img/portfolio/portfolio-6.webp' %}" title="Graduation Celebration" data-gallery="portfolio-gallery-print" class="glightbox action-btn"><i class="bi bi-arrows-fullscreen"></i></a>
-                  <a href="#" title="View Story" class="action-btn"><i class="bi bi-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-content">
-              <span class="portfolio-category">Community</span>
-              <h4 class="portfolio-title">Celebrating Empowered Futures</h4>
-            </div>
-          </div>
-        </div><!-- End Portfolio Item -->
+        {% endfor %}
 
       </div><!-- End Portfolio Container -->
 

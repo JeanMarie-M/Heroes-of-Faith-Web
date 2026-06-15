@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from heroes_app.models import Programs, Stories
+from heroes_app.models import Programs, Stories,Gallery
 
 
 # Create your views here.
@@ -15,7 +15,9 @@ def programs(request):
     context = {'our_programs': our_programs}
     return render(request, 'programs.html', context)
 def gallery(request):
-    return render(request, 'gallery.html')
+    our_photos = Gallery.objects.all()
+    context = {'our_photos': our_photos}
+    return render(request, 'gallery.html', context)
 def stories(request):
     our_stories = Stories.objects.all()
     context = {'our_stories': our_stories}
